@@ -1,0 +1,14 @@
+# crown-user 6.0 NS6572 6451 amz-p,release-keys
+- manufacturer: amazon
+- platform: mt8163
+- codename: crown
+- flavor: crown-user
+- release: 7.1.2
+- id: NS6572
+- incremental: 0012718781316
+- tags: amz-p,release-keys
+- fingerprint: Amazon/crown/crown:6.0/NS6572/6451N:user/amz-p,release-keys
+- is_ab: false
+- brand: Amazon
+- branch: crown-user-6.0-NS6572-6451-amz-p,release-keys
+- repo: amazon_crown_dump
