@@ -1,0 +1,8 @@
+on post-fs-data
+    start touchlogger
+
+service touchlogger /system/bin/touchlogger
+    class main
+    user input
+    group input
+    disabled
