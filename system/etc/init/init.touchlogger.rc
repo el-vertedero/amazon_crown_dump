@@ -1,0 +1,9 @@
+on post-fs-data
+    start touchlogger
+
+// Change to root to allow to write to sysfs to recover the touch
+service touchlogger /system/bin/touchlogger
+    class main
+    user root
+    group input
+    disabled

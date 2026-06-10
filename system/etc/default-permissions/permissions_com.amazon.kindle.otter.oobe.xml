@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright (c) 2026 Amazon.com, Inc. or its affiliates.  All rights reserved.
+   PROPRIETARY/CONFIDENTIAL.  USE IS SUBJECT TO LICENSE TERMS.
+-->
+<exceptions>
+    <exception package="com.amazon.kindle.otter.oobe">
+        <!-- Permissions needed for WIFI scan nearby -->
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="true"/>
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="true"/>
+        <!-- Added External Storage permissions for Config Bundle write -->
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="true"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="true"/>
+    </exception>
+</exceptions>
