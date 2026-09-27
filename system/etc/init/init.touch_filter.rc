@@ -1,0 +1,48 @@
+# Copyright (c) 2023 Amazon.com, Inc. or its affiliates. All rights reserved.
+# PROPRIETARY/CONFIDENTIAL.  USE IS SUBJECT TO LICENSE TERMS.
+
+# touch_filter_ih.ko has the following possible parameters:
+#
+# up_sync_mode - default true, type bool
+#
+#/*
+# * The rapid touch filter checks for a condition of rapid_filter_max_events
+# * number of touches in rapid_filter_dur_ns amount of time or less.
+# * Using unsigned int means the value upper limit here is ~4.29 sec (2^32 - 1
+# * nanoseconds)
+# */
+# static int rapid_filter_dur_ns = 0 * NSEC_PER_MSEC;
+# module_param(rapid_filter_dur_ns, int, 0660);
+# static unsigned int rapid_filter_max_events;
+# module_param(rapid_filter_max_events, int, 0660);
+#
+#/*
+# * The minimum down up touch time filter will filter out all DOWN/UP touch
+# * sequence of events if the total DOWN time is less than min_down_up_filter_ns.
+# * Using unsigned int means the value upper limit here is ~4.29 sec (2^32 - 1
+# * nanoseconds)
+# */
+# static unsigned int min_down_up_filter_ns = 25 * NSEC_PER_MSEC;
+# module_param(min_down_up_filter_ns, int, 0660);
+#
+#/*
+# * There are various condititions where we want to temporarily disable
+# * our filtering and bypass it altogether.  This is the amount of time
+# * the filter will stay bypassed before it is re-enabled.
+# */
+# static unsigned int disable_bypass_timeout_ms = 5 * 60 * MSEC_PER_SEC;
+# module_param(disable_bypass_timeout_ms, int, 0660);
+#
+#/*
+# * If we detect a touch whose total DOWN duration is greater than this value,
+# * we believe there's a high chance this come from a real physical touch from
+# * a user. Given the filter is intended to filter non-physical event generated
+# * from electrical, to minimize a potential filtering out of real input from a
+# * user, the filter is temparily bypass once this condition is detected.
+# */
+# static unsigned int phys_touch_min_dur_ms = 200;
+# module_param(phys_touch_min_dur_ms, int, 0660);
+#
+
+on boot
+   insmod /system/lib/modules/lib/modules/touch_filter_ih.ko

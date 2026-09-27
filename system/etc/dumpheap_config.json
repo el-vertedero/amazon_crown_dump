@@ -1,0 +1,19 @@
+{
+	"WatchList_Enable": false,
+	"DeviceList": [
+	         {
+			"Device_Type": "crown",
+			"Device_WatchEnabled": false,
+			"Dumpheap_WatchList": [
+				{
+					"process_name": "com.amazon.paladin",
+					"pss_threshold_limit": 208666624
+				},
+				{
+					"process_name": "amazon.speech.sim",
+					"pss_threshold_limit": 220200960
+				}
+			]
+		}
+	]
+}
