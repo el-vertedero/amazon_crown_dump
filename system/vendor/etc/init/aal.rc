@@ -1,0 +1,5 @@
+service aal /system/vendor/bin/aal
+    class main
+    user system
+    group system graphics
+

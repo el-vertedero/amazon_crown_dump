@@ -1,0 +1,5 @@
+service aal-metric /system/vendor/bin/aal-metric
+    class main
+    user system
+    group system
+
